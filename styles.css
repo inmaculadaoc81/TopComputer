@@ -119,6 +119,13 @@ a.tc-nav-link{padding:8px 14px}
 .tc-cat-card p{font-size:13px;color:var(--muted);margin:0 0 12px}
 .tc-cat-card a{font-size:12px;font-weight:800;color:var(--teal-dark)}
 
+/* brand strip */
+.tc-brand-strip{display:flex;flex-wrap:wrap;gap:12px}
+.tc-brand-strip a{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 30px;font-family:var(--font-head);font-weight:700;font-size:17px;letter-spacing:.02em;color:var(--ink);text-transform:uppercase;transition:.2s}
+.tc-brand-strip a:hover{border-color:var(--teal);color:var(--teal-dark);transform:translateY(-2px)}
+.tc-brand-strip-all{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.tc-brand-strip-all:hover{color:var(--teal)!important}
+
 /* split */
 .tc-split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
 .tc-media img{border-radius:18px;box-shadow:var(--shadow-soft);background:var(--bg-alt)}
