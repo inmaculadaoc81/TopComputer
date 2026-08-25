@@ -3,13 +3,13 @@ TOP COMPUTER ONE PAGE
 Marca:
 Top Computer | venta de Ordenadores de Segunda mano de diversas marcas conocidas
 
-Dominio recibido:
-https://vitamixtech.com.es/
+Dominio:
+https://toppcusados.com.es/
 
-IMPORTANTE:
-El dominio proporcionado es vitamixtech.com.es, que coincide con la web anterior de VitamixTech.
-Se ha usado exactamente el dominio facilitado en el código.
-Si fue un error, cambia DOMAIN/canonical/sitemap por el dominio correcto de Top Computer.
+NOTA: inicialmente se había usado por error el dominio de VitamixTech
+(vitamixtech.com.es, copiado de la plantilla). Corregido a
+toppcusados.com.es en canonical, og:url, robots.txt, sitemap.xml y
+el JSON-LD.
 
 Teléfono caja y botones:
 +34 914 46 85 03
