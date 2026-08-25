@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://toppcusados.com.es/sitemap.xml
+Sitemap: https://vitamixtech.com.es/sitemap.xml
