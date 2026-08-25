@@ -18,14 +18,16 @@
 <header class="header">
 <div class="wrap nav">
   <a href="#inicio"><img class="logo" src="/assets/logo-topcomputer.png" alt="Top Computer ordenadores de segunda mano"></a>
-  <nav class="links">
+  <nav class="links" id="mainMenu">
     <a href="#equipos">Equipos</a>
     <a href="#marcas">Marcas</a>
     <a href="#como-elegir">Cómo elegir</a>
     <a href="#cita">Pedir cita</a>
+    <a href="#sobre-segunda-mano">Guía de compra</a>
     <a href="#contacto">Contacto</a>
     <a class="navcall" href="tel:+34914468503">Atención Telefónica 24 horas 365 días</a>
   </nav>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">Menú</button>
 </div>
 </header>
 
@@ -161,6 +163,23 @@
 </div>
 </section>
 
+<section class="seo-content" id="sobre-segunda-mano">
+<div class="wrap">
+  <div class="kicker">Comprar un ordenador de segunda mano en Madrid</div>
+  <h2 class="title">Qué tener en cuenta antes de comprar un equipo reacondicionado</h2>
+
+  <div class="seo-text">
+    <p>Comprar un ordenador de segunda mano permite acceder a equipos de marcas reconocidas (HP, Lenovo, Dell, ASUS, Apple, Microsoft Surface y otras) a un precio inferior al de un equipo nuevo equivalente, siempre que la compra se haga con garantías. Lo importante no es solo el precio, sino saber en qué estado está el equipo, si ha sido revisado y si encaja con el uso real que le vas a dar.</p>
+
+    <p>En <strong>Top Computer</strong> trabajamos con equipos de distintas marcas conocidas —portátiles, PCs de sobremesa, All-in-One, Mini PC, workstations y equipos gaming— según la disponibilidad de cada momento. Antes de recomendarte un equipo, te preguntamos para qué lo vas a usar: no es lo mismo un ordenador para navegar y ofimática que uno para edición, diseño, CAD o juegos, y empezar por el uso evita pagar por características que no vas a aprovechar.</p>
+
+    <p>Si no tienes claro qué tipo de equipo necesitas, indícanos tu presupuesto aproximado y el uso principal que le darás; te orientamos según la disponibilidad real, sin prometer stock de modelos concretos que no podamos garantizar.</p>
+
+    <p><small>Top Computer es un comercio independiente de venta de ordenadores de segunda mano. Las marcas mencionadas son propiedad de sus respectivos titulares; no somos distribuidor ni servicio oficial de ninguna de ellas.</small></p>
+  </div>
+</div>
+</section>
+
 <section class="faq">
 <div class="wrap">
   <div class="kicker">Preguntas frecuentes</div>
@@ -252,7 +271,7 @@ createChat({
  const apply=()=>{
    const root=document.querySelector('#n8n-chat'); if(!root)return;
    const t=root.querySelector('.chat-window-toggle,[class*="chat-window-toggle"]');
-   const w=root.querySelector('.chat-window,[class*="chat-window"]');
+   const w=root.querySelector('.chat-window:not([class*="toggle"]),[class*="chat-window"]:not([class*="toggle"])');
    const mobile=matchMedia('(max-width:600px)').matches;
 
    if(t){
@@ -260,6 +279,7 @@ createChat({
      t.style.setProperty('right',mobile?'16px':'22px','important');
      t.style.setProperty('bottom','96px','important');
      t.style.setProperty('z-index','10060','important');
+     t.style.setProperty('border','1px solid #fff','important');
    }
 
    if(w){
@@ -284,6 +304,17 @@ createChat({
  };
  boot();
 })();
+
+const menuBtn=document.getElementById('menuBtn');
+const mainMenu=document.getElementById('mainMenu');
+menuBtn?.addEventListener('click',()=>{
+  const open=mainMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',open?'true':'false');
+});
+mainMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mainMenu.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+}));
 
 const form=document.getElementById('contact-form');
 const statusEl=document.getElementById('form-status');

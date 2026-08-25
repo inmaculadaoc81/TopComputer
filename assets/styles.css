@@ -18,9 +18,11 @@ a{text-decoration:none;color:inherit}
 }
 .nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{height:48px;max-width:330px;object-fit:contain}
-.links{display:flex;gap:22px;align-items:center;color:#fff;font-size:14px;font-weight:850}
+.links{display:flex;gap:16px;align-items:center;color:#fff;font-size:13px;font-weight:850}
+.links a{white-space:nowrap}
 .links a:hover{color:var(--teal)}
 .navcall{padding:11px 16px;border-radius:999px;background:var(--teal);color:#031717!important}
+.menu-btn{display:none;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;border-radius:11px;padding:10px 14px;font-weight:900;font:inherit;cursor:pointer}
 
 /* Hero */
 .hero{
@@ -144,12 +146,14 @@ footer{background:#05071f;color:#fff;padding:34px 0}
 .float-wa{position:fixed;right:22px;bottom:22px;z-index:10020;width:62px;height:62px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,0,0,.23)}
 .float-wa svg{width:33px;height:33px;color:#fff}
 #n8n-chat{--chat--color-primary:#05071f;--chat--color-secondary:#00d7c7;--chat--toggle--background:#05071f;--chat--toggle--hover--background:#0b1035;--chat--toggle--active--background:#0b1035}
-#n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{position:fixed!important;right:22px!important;bottom:96px!important;z-index:10060!important}
-#n8n-chat .chat-window,#n8n-chat [class*="chat-window"]{position:fixed!important;right:22px!important;bottom:166px!important;z-index:10100!important;max-height:calc(100vh - 190px)!important}
+#n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{position:fixed!important;right:22px!important;bottom:96px!important;z-index:10060!important;border:1px solid #fff!important}
+#n8n-chat .chat-window:not([class*="toggle"]),#n8n-chat [class*="chat-window"]:not([class*="toggle"]){position:fixed!important;right:22px!important;bottom:166px!important;z-index:10100!important;max-height:calc(100vh - 190px)!important}
 #n8n-chat .chat-input,#n8n-chat [class*="chat-input"],#n8n-chat .chat-footer,#n8n-chat [class*="chat-footer"]{position:sticky!important;bottom:0!important;z-index:10110!important;background:#fff!important}
 
 @media(max-width:920px){
-  .links{display:none}
+  .menu-btn{display:block}
+  .links{display:none;position:absolute;left:0;right:0;top:80px;background:#05071f;padding:18px 20px 22px;flex-direction:column;align-items:flex-start;border-top:1px solid rgba(255,255,255,.1)}
+  .links.open{display:flex}
   .hero-grid,.buy-grid,.contact-grid{grid-template-columns:1fr}
   .type-grid{grid-template-columns:repeat(2,1fr)}
   .brand-grid{grid-template-columns:repeat(3,1fr)}
@@ -169,5 +173,11 @@ footer{background:#05071f;color:#fff;padding:34px 0}
   .footer{flex-direction:column;align-items:flex-start}
   .float-wa{right:16px!important;bottom:18px!important}
   #n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{right:16px!important;bottom:96px!important}
-  #n8n-chat .chat-window,#n8n-chat [class*="chat-window"]{left:12px!important;right:12px!important;width:auto!important;bottom:166px!important}
+  #n8n-chat .chat-window:not([class*="toggle"]),#n8n-chat [class*="chat-window"]:not([class*="toggle"]){left:12px!important;right:12px!important;width:auto!important;bottom:166px!important}
 }
+
+/* SEO content section */
+.seo-content{background:#fff}
+.seo-text{max-width:900px;margin-top:18px;display:grid;gap:16px}
+.seo-text p{color:var(--muted);font-size:16px;line-height:1.7;margin:0}
+.seo-text small{color:#8a97a8}
