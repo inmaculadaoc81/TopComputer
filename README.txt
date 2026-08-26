@@ -42,4 +42,31 @@ CONTACT_EMAIL=soporte@kelatos.com
 El correo no aparece visible en la web; solo se utiliza en /api/contacto.
 
 Google Analytics:
-No se proporcionó código para esta web; no se ha añadido ninguno.
+G-7TWJ9KMGV0
+
+HISTORIAL: el repositorio era multipágina (13 páginas /servicios/ de
+compra, financiación, garantía y postventa) y se convirtió a one-page;
+esas páginas fueron eliminadas en commits anteriores. Como ya no
+existen en el sitemap actual, se ha añadido middleware.mjs para
+redirigir (301) cualquier URL antigua a la home, evitando 404 en
+enlaces indexados o backlinks antiguos. Excluye /api/* y cualquier
+ruta con extensión de archivo. Se añadió "@vercel/functions": "^2.0.3"
+a package.json como dependencia de esta función.
+
+REVISIÓN (fixes aplicados en esta pasada):
+- Ya estaba bien: banner de cookies, schema.org (Store), sección SEO,
+  menú móvil, borde blanco del chat, api/contacto.js con SMTP +
+  nodemailer, teléfono consistente. No se ha modificado ninguno de
+  estos.
+- Google Analytics: no existía. Añadido G-7TWJ9KMGV0.
+- Meta robots: no existía. Añadido.
+- .navcall: el texto largo ("Atención Telefónica 24 horas 365 días")
+  deformaba la píldora del menú. Acortado a solo el número (mismo
+  número, +34 914 46 85 03) y añadido white-space:nowrap como
+  salvaguarda.
+- H1 de portada reescrito, corto, directo y totalmente afirmativo
+  (sin condicionales tipo "pero no quieres..."), sin forzar ninguna
+  marca concreta ya que es una tienda multimarca: "Ordenadores de
+  segunda mano, revisados y listos para usar." Tamaño del H1
+  aumentado: clamp(38-58px) → clamp(46-74px) en escritorio, 40px →
+  48px en móvil.
