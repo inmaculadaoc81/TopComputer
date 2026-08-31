@@ -76,4 +76,30 @@ REVISIÓN ADICIONAL (a petición del cliente, regla general de la familia):
   .hero-tag) que sobresalía y se solapaba visualmente con la caja de
   información en anchos de tablet/escritorio medio (detectado con
   captura en vivo en AcerTech). Regla para toda la familia: no volver
-  a añadir este tipo de elemento decorativo.
+  a añadir este tipo de elemento decorativo. (La regla CSS .hero-chip
+  se deja intacta, sin uso, según práctica habitual de la familia.)
+
+REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente):
+- H1 verificado: "Ordenadores de segunda mano, revisados y listos
+  para usar." es afirmativo, corto y no repite ninguna plantilla
+  prohibida. No se ha tocado.
+- BUG REAL — texto decorativo gigante ".buy-art::before"
+  ("REVISADO", 86px) sin ninguna reducción de tamaño en tablet/móvil.
+  Añadida (58px tablet, 40px móvil). El badge legible
+  ".buy-art::after" ("ESTADO · RENDIMIENTO · USO · NECESIDAD") no es
+  un watermark, no se ha tocado.
+- BUG REAL — el botón CTA de teléfono no tenía icono, a diferencia del
+  de WhatsApp. Añadido (verificado con cuidado el cierre de las
+  etiquetas </a>: 19 aperturas / 19 cierres).
+- BUG REAL — la casilla de política de privacidad existía pero el
+  texto no enlazaba a ningún sitio. Añadido el enlace estándar de la
+  familia a https://kelatos.com/privacy-policy/, resaltado en azul.
+- Añadido "Sábados, domingos y días festivos estamos cerrados" debajo
+  del horario.
+- No se ha añadido franja de aviso de servicio técnico independiente:
+  no aplica a este negocio (venta de ordenadores de segunda mano, sin
+  el enfoque de reparación del resto de la familia).
+- Verificado sin bugs: .hero-slab es una forma decorativa sin texto
+  (no es .hero-chip, ya eliminado del HTML); Cal.com ya estaba
+  presente; schema.org ya usaba correctamente el único teléfono de
+  este repo; formulario correctamente conectado a /api/contacto.
