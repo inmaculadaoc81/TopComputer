@@ -70,3 +70,10 @@ REVISIÓN (fixes aplicados en esta pasada):
   segunda mano, revisados y listos para usar." Tamaño del H1
   aumentado: clamp(38-58px) → clamp(46-74px) en escritorio, 40px →
   48px en móvil.
+
+REVISIÓN ADICIONAL (a petición del cliente, regla general de la familia):
+- Quitada la pestaña/etiqueta rotada del hero (.hero-chip o
+  .hero-tag) que sobresalía y se solapaba visualmente con la caja de
+  información en anchos de tablet/escritorio medio (detectado con
+  captura en vivo en AcerTech). Regla para toda la familia: no volver
+  a añadir este tipo de elemento decorativo.
