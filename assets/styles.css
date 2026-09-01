@@ -63,7 +63,9 @@ h1{font-size:clamp(46px,5.6vw,74px);line-height:1.03;letter-spacing:-2.4px;margi
 .accent{color:var(--teal)}
 .hero-copy{font-size:18px;color:#cbd6e3;max-width:760px;margin:0 0 26px}
 .ctas{display:grid;grid-template-columns:1.18fr .82fr;gap:11px;max-width:790px}
-.cta{min-height:62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:13px 17px;border-radius:16px;font-weight:900}
+.cta{min-height:62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:13px 17px;border-radius:999px;font-weight:900;transition:filter .15s ease,background .15s ease,color .15s ease}
+.wa:hover,.stock:hover{filter:brightness(.88)}
+.phone:hover{background:var(--teal);color:#031717}
 .cta svg{width:22px;height:22px;margin-right:8px;flex:0 0 22px}
 .wa{background:var(--green);color:#fff}
 .stock{background:var(--teal);color:#031717}
