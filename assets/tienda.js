@@ -35,6 +35,19 @@
     const a = nodo('a', 'equipo-consultar', 'Consultar');
     const referencia = e.referencia || e.id_equipo;
     a.href = '/tienda?'+new URLSearchParams({equipo:nombre+(referencia ? ' ('+referencia+')' : ''), tipo})+'#contacto';
+    a.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const form = document.getElementById('contact-form');
+      const contacto = document.getElementById('contacto');
+      if (!form || !contacto) return;
+      event.preventDefault();
+      const seleccionado = nombre+(referencia ? ' ('+referencia+')' : '');
+      form.elements.mensaje.value = 'Hola, deseo comprar el equipo '+seleccionado.slice(0,300)+' y quisiera saber si está disponible.';
+      form.elements.equipo.value = seleccionado.slice(0,180);
+      history.replaceState(null, '', a.href);
+      contacto.scrollIntoView({behavior:'smooth', block:'start'});
+      form.elements.nombre.focus({preventScroll:true});
+    });
     a.setAttribute('aria-label', 'Consultar '+nombre); body.append(a); card.append(body); return card;
   }
   function render() {
