@@ -61,7 +61,7 @@ module.exports=async(req,res)=>{
 Nombre: ${nombre}
 Teléfono: ${telefono}
 Email: ${email}
-Tipo de equipo: ${equipo}
+Equipo: ${equipo}
 
 Consulta:
 ${mensaje}`

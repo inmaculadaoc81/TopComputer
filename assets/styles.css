@@ -201,3 +201,7 @@ footer{background:#05071f;color:#fff;padding:34px 0}
 .equipos-vacio{grid-column:1/-1;text-align:center;padding:24px;background:#fff;border-radius:18px}.equipos-vacio a{display:inline-block;margin-top:12px}
 @media(max-width:900px){.equipos-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.equipos-filtros{grid-template-columns:1fr}.equipos-lista{gap:10px}.equipo-body{padding:12px 10px}.equipo-nombre{font-size:15px}.equipo-caracteristicas{font-size:11px}.equipo-consultar{font-size:12px}.tienda-hero{padding:38px 0}}
+
+/* Tamaño reducido del título de la tienda */
+.tienda-hero h1{font-size:clamp(23px,2.8vw,37px);letter-spacing:-1.2px}
+@media(max-width:600px){.tienda-hero h1{font-size:24px;letter-spacing:-.75px}}

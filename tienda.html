@@ -42,10 +42,8 @@ gtag('config','G-7TWJ9KMGV0');
 
 <main>
 <section class="hero tienda-hero"><div class="wrap" style="position:relative;z-index:2">
-<div class="eyebrow">Top Computer · Ordenadores de segunda mano</div>
 <h1>Encuentra tu próximo <span class="accent">ordenador.</span></h1>
 <p class="hero-copy">Explora los equipos y sus características. Consulta desde el formulario para que confirmemos su disponibilidad y te ayudemos a elegir.</p>
-<a class="cta stock" href="/#contacto">Consultar un equipo</a>
 </div></section>
 <section class="tienda-catalogo"><div class="wrap">
 <h2>Catálogo de ordenadores</h2>
@@ -68,17 +66,8 @@ gtag('config','G-7TWJ9KMGV0');
     <form id="contact-form">
       <input name="nombre" placeholder="Nombre" required>
       <input name="telefono" placeholder="Teléfono" required>
-      <input name="email" type="email" placeholder="Correo electrónico" required>
-      <select name="equipo" required>
-        <option value="">¿Qué tipo de equipo buscas?</option>
-        <option>Portátil</option>
-        <option>PC de sobremesa</option>
-        <option>All-in-One</option>
-        <option>Mini PC</option>
-        <option>Gaming</option>
-        <option>Workstation</option>
-        <option>No lo sé todavía</option>
-      </select>
+      <input class="full" name="email" type="email" placeholder="Correo electrónico" required>
+      <input type="hidden" name="equipo" value="Consulta de compra">
 
       <textarea class="full" name="mensaje" placeholder="Cuéntanos para qué lo necesitas, presupuesto aproximado y cualquier preferencia de marca o tamaño." required></textarea>
 
@@ -183,9 +172,8 @@ const form=document.getElementById('contact-form');
 const statusEl=document.getElementById('form-status');
 const consulta=new URLSearchParams(location.search).get('equipo');
 if(consulta){
-  form.elements.mensaje.value='Hola, quiero consultar la disponibilidad del equipo: '+consulta.slice(0,300)+'.';
-  const tipo=new URLSearchParams(location.search).get('tipo');
-  if(Array.from(form.elements.equipo.options).some(o=>o.value===tipo)) form.elements.equipo.value=tipo;
+  form.elements.mensaje.value='Hola, deseo comprar el equipo '+consulta.slice(0,300)+' y quisiera saber si está disponible.';
+  form.elements.equipo.value=consulta.slice(0,180);
 }
 
 
