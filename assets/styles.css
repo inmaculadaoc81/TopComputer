@@ -188,3 +188,16 @@ footer{background:#05071f;color:#fff;padding:34px 0}
 .seo-text{max-width:900px;margin-top:18px;display:grid;gap:16px}
 .seo-text p{color:var(--muted);font-size:16px;line-height:1.7;margin:0}
 .seo-text small{color:#8a97a8}
+
+/* Tienda Top Computer */
+.tienda-hero{padding:55px 0}.tienda-hero h1{max-width:850px}.tienda-catalogo{background:var(--soft)}
+.links [aria-current="page"]{color:var(--teal)}
+.equipos-filtros{display:grid;grid-template-columns:2fr 1fr;gap:14px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.equipos-filtros label{display:grid;gap:7px;font-weight:800;font-size:13px}.equipos-filtros input,.equipos-filtros select{width:100%;min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px;font:inherit}
+.equipos-lista{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px}.equipo-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.equipo-img,.equipo-img-placeholder{width:100%;aspect-ratio:1;object-fit:contain;background:#fff}.equipo-img-placeholder{display:grid;place-items:center;background:var(--dark);color:var(--teal);font-weight:900}
+.equipo-body{padding:18px;display:flex;flex-direction:column;flex:1;gap:12px}.equipo-tipo{font-size:12px;color:var(--teal2);font-weight:800}.equipo-nombre{font-size:19px;line-height:1.3;margin:0;overflow-wrap:anywhere}.equipo-caracteristicas{font-size:12px;background:var(--soft);padding:10px;border-radius:12px;white-space:pre-line;overflow-wrap:anywhere}
+.equipo-consultar{display:block;text-align:center;background:var(--teal);color:var(--dark);border-radius:999px;padding:11px;font-weight:900;margin-top:auto}.equipo-consultar:hover{background:var(--dark);color:#fff}.equipo-consultar:focus-visible,.equipos-filtros input:focus-visible,.equipos-filtros select:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.equipos-vacio{grid-column:1/-1;text-align:center;padding:24px;background:#fff;border-radius:18px}.equipos-vacio a{display:inline-block;margin-top:12px}
+@media(max-width:900px){.equipos-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.equipos-filtros{grid-template-columns:1fr}.equipos-lista{gap:10px}.equipo-body{padding:12px 10px}.equipo-nombre{font-size:15px}.equipo-caracteristicas{font-size:11px}.equipo-consultar{font-size:12px}.tienda-hero{padding:38px 0}}
