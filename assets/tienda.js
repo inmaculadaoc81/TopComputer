@@ -12,7 +12,7 @@
   function aviso(texto) {
     const p = nodo('p', 'equipos-vacio', texto);
     p.append(document.createElement('br'));
-    const a = nodo('a', 'equipo-consultar', 'Consultar'); a.href = '/#contacto'; p.append(a);
+    const a = nodo('a', 'equipo-consultar', 'Consultar'); a.href = '#contacto'; p.append(a);
     lista.replaceChildren(p);
   }
   function tarjeta(e) {
@@ -34,7 +34,7 @@
     if (datos.length || e.caracteristicas) body.append(nodo('div', 'equipo-caracteristicas', datos.length ? datos.join('\n') : String(e.caracteristicas).split(',').map(x => x.trim()).join('\n')));
     const a = nodo('a', 'equipo-consultar', 'Consultar');
     const referencia = e.referencia || e.id_equipo;
-    a.href = '/?'+new URLSearchParams({equipo:nombre+(referencia ? ' ('+referencia+')' : ''), tipo})+'#contacto';
+    a.href = '/tienda?'+new URLSearchParams({equipo:nombre+(referencia ? ' ('+referencia+')' : ''), tipo})+'#contacto';
     a.setAttribute('aria-label', 'Consultar '+nombre); body.append(a); card.append(body); return card;
   }
   function render() {
