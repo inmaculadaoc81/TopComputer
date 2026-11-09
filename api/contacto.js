@@ -1,6 +1,7 @@
 const nodemailer=require("nodemailer");
 
 const clean=(v,max=4000)=>String(v??"").replace(/[<>]/g,"").trim().slice(0,max);
+const EMAIL_RE=/^[^\s@"(),:;<>[\]\\]+@[^\s@"(),:;<>[\]\\]+\.[a-z]{2,}$/i;
 
 module.exports=async(req,res)=>{
   if(req.method==="GET"){
@@ -26,6 +27,10 @@ module.exports=async(req,res)=>{
     }
 
     const b=req.body||{};
+    if(clean(b.website)) return res.status(200).json({ok:true});
+    const ts=Number(b.ts);
+    if(!ts||Date.now()-ts<2000) return res.status(200).json({ok:true});
+
     const nombre=clean(b.nombre,120);
     const telefono=clean(b.telefono,60);
     const email=clean(b.email,180);
@@ -34,6 +39,9 @@ module.exports=async(req,res)=>{
 
     if(!nombre||!telefono||!email||!equipo||!mensaje){
       return res.status(400).json({ok:false,code:"INVALID_FORM_DATA"});
+    }
+    if(!EMAIL_RE.test(email)){
+      return res.status(400).json({ok:false,code:"INVALID_EMAIL"});
     }
 
     const port=Number(process.env.SMTP_PORT||465);

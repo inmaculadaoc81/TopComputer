@@ -209,6 +209,7 @@ gtag('config','G-7TWJ9KMGV0');
 
   <div>
     <form id="contact-form">
+      <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" value="">
       <input name="nombre" placeholder="Nombre" required>
       <input name="telefono" placeholder="Teléfono" required>
       <input class="full" name="email" type="email" placeholder="Correo electrónico" required>
@@ -315,6 +316,7 @@ mainMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
 
 const form=document.getElementById('contact-form');
 const statusEl=document.getElementById('form-status');
+const formLoadedAt=Date.now();
 const consulta=new URLSearchParams(location.search).get('equipo');
 if(consulta){
   form.elements.mensaje.value='Hola, deseo comprar el equipo '+consulta.slice(0,300)+' y quisiera saber si está disponible.';
@@ -333,7 +335,7 @@ form.addEventListener('submit',async(e)=>{
     const response=await fetch('/api/contacto',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+      body:JSON.stringify(Object.assign(Object.fromEntries(new FormData(form).entries()),{ts:formLoadedAt}))
     });
 
     const data=await response.json().catch(()=>({}));
